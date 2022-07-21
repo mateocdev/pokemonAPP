@@ -18,7 +18,7 @@ export const Navbar = () => {
         alt="gif app"
         width={70}
         height={70}
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/132.gif"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/200.svg"
       />
       <Spacer />
       <Text color="white" h2>

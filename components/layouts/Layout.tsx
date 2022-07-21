@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Navbar } from "../ui";
 interface LayoutProps {
   title?: string;
+  children: Function;
 }
 export const Layout: FC = ({ children, title }: LayoutProps) => {
   return (
