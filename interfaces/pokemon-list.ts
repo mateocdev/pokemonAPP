@@ -2,10 +2,10 @@ export interface PokemonListResponse {
   count: number;
   next?: string;
   previous?: string;
-  results: PokemonListResponseResult[];
+  results: SmallPokemon[];
 }
 
-export interface PokemonListResponseResult {
+export interface SmallPokemon {
   name: string;
   url: string;
   id: number;

@@ -3,9 +3,9 @@ import Head from "next/head";
 import { Navbar } from "../ui";
 interface LayoutProps {
   title?: string;
-  children: Function;
+  children: React.ReactNode;
 }
-export const Layout: FC = ({ children, title }: LayoutProps) => {
+export const Layout: FC<LayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
