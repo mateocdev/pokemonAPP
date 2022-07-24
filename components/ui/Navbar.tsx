@@ -28,7 +28,7 @@ export const Navbar = () => {
         okemon
       </Text>
       <Spacer css={{ flex: 1 }} />
-      <Text color="white">Favorites</Text>
+      <Text color="white" css={{ marginRight: 16 }}>Favorites</Text>
     </div>
   );
 };
