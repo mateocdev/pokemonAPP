@@ -1,11 +1,12 @@
-import { Layout } from "../../components/layouts"
+import { Layout } from "../../components/layouts";
+import { NoFavorites } from "../../components/ui";
 
 const Favorites = () => {
   return (
     <Layout title="Favorites">
-      <h1>Your favorites</h1>
+      <NoFavorites />
     </Layout>
-  )
-}
+  );
+};
 
 export default Favorites;
