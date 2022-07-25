@@ -82,7 +82,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const allPokemon = [
     ...Array(151)
       .fill(1)
-      .map((_, i) => `${i}`),
+      .map((_, i) => `${i + 1}`),
   ];
 
   return {
