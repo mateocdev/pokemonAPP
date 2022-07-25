@@ -11,7 +11,7 @@ interface Props {
 
 const HomePage: NextPage<Props> = ({ pokemons }) => {
   return (
-    <Layout title="Pokemon App">
+    <Layout title="Pokedex">
       <Grid.Container gap={2} justify="flex-start">
         {pokemons.map((pokemon) => (
           <PokemonCard  key={pokemon.id} pokemon={pokemon} />
@@ -26,7 +26,7 @@ const HomePage: NextPage<Props> = ({ pokemons }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const {
     data: { results },
-  } = (await pokeApi.get<PokemonListResponse>("/pokemon?limit=151")) || {};
+  } = (await pokeApi.get<PokemonListResponse>("/pokemon?limit=175")) || {};
   const pokemons: SmallPokemon[] = results.map(
     ({ name = "", url = "" }, id) => ({
       name,
