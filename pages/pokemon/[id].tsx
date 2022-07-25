@@ -7,10 +7,10 @@ interface Props {
   pokemon: Pokemon;
 }
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
-  const { name, sprites, types } = pokemon;
+  const { name, sprites, } = pokemon;
 
   return (
-    <Layout title="PokemonPage">
+    <Layout title={name.toUpperCase()}>
       <Grid.Container css={{ marginTop: "5px" }} gap={2}>
         <Grid xs={12} sm={4}>
           <Card isHoverable css={{ padding: "30px" }}>
