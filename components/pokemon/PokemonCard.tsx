@@ -7,10 +7,10 @@ interface Props {
   pokemon: SmallPokemon;
 }
 export const PokemonCard: FC<Props> = ({ pokemon }) => {
-  const { name, url, id, img } = pokemon || {};
+  const { name, id, img } = pokemon || {};
   const router = useRouter();
   const onPress = () => {
-    router.push(`/pokemon/${id}`);
+    router.push(`/name/${name}`);
   };
   return (
     <Grid xs={6} sm={3} md={2} xl={1} key={id}>
