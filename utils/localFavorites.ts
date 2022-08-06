@@ -12,11 +12,17 @@ const toggleFavorite = (id: number) => {
 };
 
 const existInFavorites = (id: number): boolean => {
-  if (typeof window === "undefined") {  return false; }
+  if (typeof window === "undefined") {
+    return false;
+  }
   const favorites: number[] = JSON.parse(
     localStorage.getItem("favorites") || "[]"
   );
   return favorites.includes(id);
 };
 
-export default { toggleFavorite, existInFavorites };
+const pokemons = (): number[] => {
+  return JSON.parse(localStorage.getItem("favorites") || "[]");
+};
+
+export default { toggleFavorite, existInFavorites, pokemons };
