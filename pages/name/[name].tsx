@@ -106,7 +106,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const {
     data: { results },
   } = (await pokeApi.get<PokemonListResponse>("/pokemon?limit=200")) || {};
-return {
+  return {
     paths: (results || []).map(({ name = "" }) => ({ params: { name } })),
     fallback: false,
   };
@@ -116,13 +116,16 @@ return {
 // and it is used to fetch data from the server
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { name } = params || {};
-  console.log(params);
   const { data } = await pokeApi.get<Pokemon>(`/pokemon/${name}`);
+  const pokemon = {
+    id: data.id,
+    name: data.name,
+    sprites: data.sprites,
+  }
   return {
     props: {
-      pokemon: data,
+      pokemon,
     },
   };
 };
 export default PokemonByNamePage;
-
