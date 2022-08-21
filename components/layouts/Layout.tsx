@@ -22,7 +22,7 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
           content={`pokemon, information, react, nextjs, ${title}, pokedex`}
         />
         <meta property="og:title" content={`Information about pokemons, this is a pokedex - ${title}`} />
-        <meta property="og:image" content={`${origin}/img/banner.png`} />
+        <meta property="og:image" content={`${origin}/image/banner.png`} />
         <meta property="og:description" content={`This is the page about ${title}.`} />
       </Head>
       <Navbar />
