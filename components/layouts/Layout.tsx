@@ -5,7 +5,9 @@ interface LayoutProps {
   title?: string;
   children: React.ReactNode;
 }
+const origin = typeof window !== "undefined" ? window.location.origin : "";
 export const Layout: FC<LayoutProps> = ({ children, title }) => {
+  
   return (
     <>
       <Head>
@@ -19,6 +21,9 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
           name="keywords"
           content={`pokemon, information, react, nextjs, ${title}, pokedex`}
         />
+        <meta property="og:title" content={`Information about pokemons, this is a pokedex - ${title}`} />
+        <meta property="og:image" content={`${origin}/img/banner.png`} />
+        <meta property="og:description" content={`This is the page about ${title}.`} />
       </Head>
       <Navbar />
       <main
