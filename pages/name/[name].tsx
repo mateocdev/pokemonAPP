@@ -108,7 +108,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   } = (await pokeApi.get<PokemonListResponse>("/pokemon?limit=200")) || {};
   return {
     paths: (results || []).map(({ name = "" }) => ({ params: { name } })),
-    fallback: false,
+    // can be used to generate pages on demand
+    fallback: 'blocking',
   };
 };
 
@@ -122,10 +123,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     name: data.name,
     sprites: data.sprites,
   }
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      }
+    };
+  }
   return {
     props: {
       pokemon,
     },
+    revalidate: 86400,
   };
 };
 export default PokemonByNamePage;
